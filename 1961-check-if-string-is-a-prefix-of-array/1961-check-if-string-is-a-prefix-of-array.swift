@@ -14,35 +14,21 @@ class Solution {
 //     return (s == prev)
 // }
     
-//     func isPrefixString(_ s: String, _ words: [String]) -> Bool {
-//         var string = ""
-
-//         for word in words {
-
-//             if !s.contains(string) {
-//                 return false
-//             }
-
-//             if s == string {
-//                 return true
-//             }
-//         }
-
-//         return false
-//     }
     func isPrefixString(_ s: String, _ words: [String]) -> Bool {
-    var string = ""
+        var string = ""
 
-    for word in words {
-        string += word
-        guard s.contains(string) else {
-            return false
+        for word in words {
+            string += word
+            
+            if !s.contains(string) {
+                return false
+            }
+
+            if s == string {
+                return true
+            }
         }
-        guard s != string else {
-            return true
-        }
+
+        return false
     }
-    
-    return false
-}
 }
